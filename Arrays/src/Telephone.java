@@ -3,7 +3,7 @@ public class Telephone {
     public static void main(String[] args) {
 
         /**
-         * An array where each element is an array
+         * 2D An array where each element is an array
          * Useful for storing a matrix of data
          */
 
