@@ -9,14 +9,14 @@ public class scanerIntoAnArray {
         String[] foods;
         int size;
 
-        System.out.print("What # of food do you want?: ");
+        System.out.print("What # of food do you want: ");
         size = scanner.nextInt();
         scanner.nextLine();
 
         foods = new String[size];
 
         for(int i = 0; i < foods.length; i++){
-            System.out.print("Enter a food name: ");
+            System.out.print("Enter the food: ");
             foods[i] = scanner.nextLine();
         }
 
