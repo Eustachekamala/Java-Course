@@ -50,7 +50,7 @@ public class App {
             playAgain = scanner.nextLine().toLowerCase();
         } while ( playAgain.equals("yes"));
 
-        System.out.println("THANS FOR PLAYING");
+        System.out.println("THANkS FOR PLAYING");
 
         scanner.close();
 
