@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/SlotMachine/SlotMachine.iml" filepath="$PROJECT_DIR$/SlotMachine/SlotMachine.iml" />
       <module fileurl="file://$PROJECT_DIR$/Static-keyword/Static-keyword.iml" filepath="$PROJECT_DIR$/Static-keyword/Static-keyword.iml" />
       <module fileurl="file://$PROJECT_DIR$/Super/Super.iml" filepath="$PROJECT_DIR$/Super/Super.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ToString/ToString.iml" filepath="$PROJECT_DIR$/ToString/ToString.iml" />
       <module fileurl="file://$PROJECT_DIR$/Varargs/Varargs.iml" filepath="$PROJECT_DIR$/Varargs/Varargs.iml" />
       <module fileurl="file://$PROJECT_DIR$/diceRoller/diceRoller.iml" filepath="$PROJECT_DIR$/diceRoller/diceRoller.iml" />
     </modules>
