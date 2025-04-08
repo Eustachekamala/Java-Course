@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/ArrayOfObjects/ArrayOfObjects.iml" filepath="$PROJECT_DIR$/ArrayOfObjects/ArrayOfObjects.iml" />
       <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bank-app/Bank-app.iml" filepath="$PROJECT_DIR$/Bank-app/Bank-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Composition/Composition.iml" filepath="$PROJECT_DIR$/Composition/Composition.iml" />
       <module fileurl="file://$PROJECT_DIR$/Constructor/Constructor.iml" filepath="$PROJECT_DIR$/Constructor/Constructor.iml" />
       <module fileurl="file://$PROJECT_DIR$/Getters-Setters/Getters-Setters.iml" filepath="$PROJECT_DIR$/Getters-Setters/Getters-Setters.iml" />
       <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
