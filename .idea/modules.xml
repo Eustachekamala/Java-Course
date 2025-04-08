@@ -28,6 +28,7 @@
       <module fileurl="file://$PROJECT_DIR$/ToString/ToString.iml" filepath="$PROJECT_DIR$/ToString/ToString.iml" />
       <module fileurl="file://$PROJECT_DIR$/Varargs/Varargs.iml" filepath="$PROJECT_DIR$/Varargs/Varargs.iml" />
       <module fileurl="file://$PROJECT_DIR$/WrapperClasses/WrapperClasses.iml" filepath="$PROJECT_DIR$/WrapperClasses/WrapperClasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WriteFiles/WriteFiles.iml" filepath="$PROJECT_DIR$/WriteFiles/WriteFiles.iml" />
       <module fileurl="file://$PROJECT_DIR$/diceRoller/diceRoller.iml" filepath="$PROJECT_DIR$/diceRoller/diceRoller.iml" />
     </modules>
   </component>
