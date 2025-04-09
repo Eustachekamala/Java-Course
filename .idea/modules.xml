@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Abstraction/Abstraction.iml" filepath="$PROJECT_DIR$/Abstraction/Abstraction.iml" />
       <module fileurl="file://$PROJECT_DIR$/Aggregation/Aggregation.iml" filepath="$PROJECT_DIR$/Aggregation/Aggregation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AnonymousClasses/AnonymousClasses.iml" filepath="$PROJECT_DIR$/AnonymousClasses/AnonymousClasses.iml" />
       <module fileurl="file://$PROJECT_DIR$/ArrayList/ArrayList.iml" filepath="$PROJECT_DIR$/ArrayList/ArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/ArrayOfObjects/ArrayOfObjects.iml" filepath="$PROJECT_DIR$/ArrayOfObjects/ArrayOfObjects.iml" />
       <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
