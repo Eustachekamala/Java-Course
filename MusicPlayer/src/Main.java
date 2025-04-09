@@ -9,7 +9,7 @@ public class Main {
         /*
          * How to PLAY AUDIO with Java (.wav, .au, .aiff)
          */
-        String filePath = "MusicPlayer/src/Evan_Craft,_feat._KB.wav";
+        String filePath = "MusicPlayer/src/Ringtone.wav";
         File file = new File(filePath);
 
         try(Scanner scanner = new Scanner(System.in); AudioInputStream  audioInputStream = AudioSystem.getAudioInputStream(file)){
