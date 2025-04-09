@@ -1,0 +1,144 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.util.*;
+import java.util.List;
+
+class HangmanGUI extends JFrame {
+    private String word;
+    private Set<Character> guessedLetters = new HashSet<>();
+    private int wrongGuesses = 0;
+    private final JLabel wordLabel = new JLabel();
+    private final JLabel messageLabel = new JLabel("Guess a letter:");
+    private final JTextField inputField = new JTextField(1);
+    private final JLabel guessedLabel = new JLabel();
+    private final JLabel hangmanLabel = new JLabel();
+    private final JButton playAgainButton = new JButton("Play Again");
+
+    public HangmanGUI() {
+        setTitle("Hangman Game - Java Swing Edition");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(400, 300);
+        setLocationRelativeTo(null);
+        setLayout(new GridLayout(7, 1));
+
+        wordLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        wordLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        hangmanLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        guessedLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        add(wordLabel);
+        add(hangmanLabel);
+        add(guessedLabel);
+        add(messageLabel);
+        add(inputField);
+        add(playAgainButton);
+
+        inputField.addActionListener(e -> handleGuess());
+        playAgainButton.addActionListener(e -> startNewGame());
+
+        playAgainButton.setVisible(false);
+        startNewGame();
+        setVisible(true);
+    }
+
+    private void startNewGame() {
+        guessedLetters.clear();
+        wrongGuesses = 0;
+        inputField.setEditable(true);
+        playAgainButton.setVisible(false);
+        messageLabel.setText("Guess a letter:");
+
+        word = loadRandomWord().toLowerCase();
+        updateWordDisplay();
+        updateHangman();
+        guessedLabel.setText("Guessed: ");
+    }
+
+    private void handleGuess() {
+        String input = inputField.getText().toLowerCase();
+        inputField.setText("");
+
+        if (input.isEmpty() || input.length() > 1 || !Character.isLetter(input.charAt(0))) {
+            messageLabel.setText("Please enter a single alphabet letter.");
+            return;
+        }
+
+        char guess = input.charAt(0);
+        if (guessedLetters.contains(guess)) {
+            messageLabel.setText("You already guessed that letter!");
+            return;
+        }
+
+        guessedLetters.add(guess);
+        guessedLabel.setText("Guessed: " + guessedLetters);
+
+        if (word.indexOf(guess) >= 0) {
+            messageLabel.setText("Correct guess!");
+        } else {
+            wrongGuesses++;
+            messageLabel.setText("Wrong guess!");
+        }
+
+        updateWordDisplay();
+        updateHangman();
+
+        if (!wordLabel.getText().contains("_")) {
+            messageLabel.setText("Congratulations! You won!");
+            inputField.setEditable(false);
+            playAgainButton.setVisible(true);
+        } else if (wrongGuesses >= 6) {
+            messageLabel.setText("Game Over! The word was: " + word);
+            inputField.setEditable(false);
+            playAgainButton.setVisible(true);
+        }
+    }
+
+    private void updateWordDisplay() {
+        StringBuilder sb = new StringBuilder();
+        for (char c : word.toCharArray()) {
+            sb.append(guessedLetters.contains(c) ? c : '_').append(' ');
+        }
+        wordLabel.setText(sb.toString().trim());
+    }
+
+    private void updateHangman() {
+        String[] hangmanStates = {
+                "",
+                " O",
+                " O<br>|",
+                " O<br>/|",
+                " O<br>/|\\",
+                " O<br>/|\\<br>/",
+                " O<br>/|\\<br>/ \\",
+        };
+        hangmanLabel.setText("<html><div style='font-family:monospace;text-align:center'>" + hangmanStates[wrongGuesses] + "</div></html>");
+    }
+
+    private String loadRandomWord() {
+        String filePath = "Hangman-Game/src/words.txt";
+        List<String> words = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                words.add(line.trim());
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Could not read the word list.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
+
+        if (words.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Word list is empty.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
+
+        return words.get((int) (Math.random() * words.size()));
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(HangmanGUI::new);
+    }
+}
